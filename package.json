@@ -6,13 +6,21 @@
   "author": "Wagner Candido",
   "license": "MIT",
   "scripts": {
+	"build": "babel src --extensions \"\".js,.ts --out-dir dist --copy-files --no-copy-ignored",
+	"start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node-modules --no-notify src/server.ts",
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/node": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-typescript": "^7.18.6",
     "@types/express": "^4.17.13",
     "@types/jest": "^28.1.6",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "jest": "^28.1.3",
