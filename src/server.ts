@@ -1,11 +1,13 @@
+import { Log } from '@config/LogConfig';
 import express from 'express';
 
 const app = express();
+const log = new Log();
 
 app.use(express.json());
 
 app.get('/', (req, res) => {
-	const message = `Route get${req.query.name ? ' with params => ' + req.query.name : '' }`;
+	const message = `Route get${req.query.name ? ' with params => ' + req.query.name : ''}`;
 	return res.json({ message });
 });
 app.post('/', (req, res) => {
@@ -26,4 +28,4 @@ app.delete('/:id', (req, res) => {
 	return res.json({ message: `Route delete by id => ${id}` });
 });
 
-app.listen(3333);
+app.listen(3333, () => { log.info('Started App') });
