@@ -1,0 +1,37 @@
+# Docker Compose file Reference
+version: '3'
+
+#Define services
+services:
+
+  #PostgreSQL Database for the application
+  scrum-postgres:
+    image: "postgres:latest"
+    container_name: nodetestdb
+    #Volume mounted for database for the storage
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432" # Forward the exposed port 5432 on the container to port 5432 on the host machine
+
+    #Environment variable for DB name, user and password
+    environment:
+      - POSTGRES_DB=nodetestdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+  
+  # mariadb:
+  #   image: mariadb:10.7
+  #   ports:
+  #     - 3306:3306
+  #   volumes:
+  #     - ~/apps/mariadb:/var/lib/mysql
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=admin
+  #     - MYSQL_PASSWORD=admin
+  #     - MYSQL_USER=admin
+  #     - MYSQL_DATABASE=nodetestdbm
+
+volumes:
+  postgres-data: {}

@@ -1,4 +1,4 @@
-export class Log {
+export class Logger {
 
 	private INFO = 'INFO';
 	private WARN = 'WARN';

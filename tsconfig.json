@@ -20,9 +20,11 @@
 		"baseUrl": ".",
 		"paths": {
 			"@controllers/*":["./src/controllers/*"],
-			"@models/*":["./src/models/*"],
-			"@views/*":["./src/views/*"],
-			"@config/*":["./src/config/*"]
+			"@repository/*":["./src/repository/*"],
+			"@service/*":["./src/service/*"],
+			"@config/*":["./src/config/*"],
+			"@entity/*":["src/entity/*"],
+			"@enum/*":["./src/enum/*"]
 		}
 	},
 	"include": [
